@@ -40,7 +40,7 @@ module SentientController
   def self.included(base)
     base.class_eval {
       before_action do |c|
-        User.current = c.send(:current_user)
+        Spree::User.current = c.send(:spree_current_user)
       end
     }
   end
